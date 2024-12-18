@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="title">ChessGuesser</div>
+    <div class="fen-container">
+        <textarea 
+          [(ngModel)]="fenString" 
+          class="fen-input" 
+          rows="5" 
+          placeholder="Enter FEN string here..."></textarea>
+        <button (click)="evaluatePosition()">Evaluate</button>
+
+        <div id="chessboard"></div>
+      
+        <div class="result-area" *ngIf="evaluationResult !== null">
+          <label>Approximate Evaluation:</label>
+          <p class="text">{{ evaluation }}</p>
+          <label>Interpretation:</label>
+          <p class="text">{{ interpretation }}</p>
+        </div>
+    </div>      
+</div>

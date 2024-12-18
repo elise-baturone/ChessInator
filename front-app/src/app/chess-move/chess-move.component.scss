@@ -1,0 +1,99 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 22px;
+    margin: 0.5rem;
+}
+
+.position-input {
+    padding: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+input {
+    padding: 1.5vh;
+    margin-right: 2vw;
+    border-radius: 10px;
+    width: 70%;
+}
+
+button {
+    border-radius: 10px;
+    padding: 1vw;
+}
+
+.result-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    font-size: 22px;
+    color: #1b1c1c
+}
+
+.result-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Constrain height */
+    max-height: 100%; /* Prevent it from exceeding its parent */
+    width: 100%; /* Optional: make it full width */
+    max-width: 100%; /* Ensure it doesn't grow uncontrollably */
+    overflow: hidden; /* Prevent image from visually spilling out */
+    box-sizing: border-box; /* Include padding in dimensions */
+}
+
+.empty_img {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: solid #ccc;
+    border-radius: 10px;
+    background-color: rgb(119, 119, 119);
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    color: #ccc;
+}
+
+.image {
+    height: 80%;
+}
+
+img {
+    height: auto;
+    object-fit: contain; /* Keeps the aspect ratio within bounds */
+}
+
+img {
+    max-width: 100%;
+    max-height: 35vh;
+}
+
+#chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+  }
+  
+  .cell {
+    width: 50px;
+    height: 50px;
+  }

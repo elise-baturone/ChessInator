@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="title">Is this chess ?</div>
+    <div *ngIf="imageSrc; else no_img" class="image">
+        <img [src]="imageSrc" alt="Selected Image"/>
+    </div>
+    <ng-template #no_img>
+        <div class="empty_img">
+            <p>No image selected</p>
+        </div>
+    </ng-template>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+
+    <div class="toggle-service">
+        <label>
+            <input type="radio" name="service" value="azure" [(ngModel)]="selectedService" />
+            Azure Service
+        </label>
+        <label>
+            <input type="radio" name="service" value="docker" [(ngModel)]="selectedService" />
+            Docker Service
+        </label>
+    </div>
+
+    <button (click)="sendImage()">Is It Chess Image?</button>
+
+    <div class="result-area" *ngIf="predictionResult">
+        <h2>Prediction Result</h2>
+        <p>Using: {{ selectedService === 'azure' ? 'Azure Service' : 'Docker Service' }}</p>
+        <div class="result" [ngClass]="{ 'is-chess': isChess, 'not-chess': !isChess }">
+          <p class="text" *ngIf="isChess">🎉 This is a Chess Image!</p>
+          <p class="text" *ngIf="!isChess">❌ This is NOT a Chess Image.</p>
+          <div class="confidence-bar">
+            <div
+              class="confidence"
+              [style.width]="chessProbability * 100 + '%'"
+            ></div>
+          </div>
+          <p class="text">Confidence: {{ (chessProbability * 100).toFixed(2) }}%</p>
+        </div>
+      </div>
+</div>
