@@ -1,0 +1,9 @@
+{
+    "routes": [
+      {
+        "route": "/score",
+        "allowedRoles": ["anonymous"],
+        "rewrite": "http://3d035b12-3446-4915-acb8-8886bdef0526.francecentral.azurecontainer.io/score"
+      }
+    ]
+  }

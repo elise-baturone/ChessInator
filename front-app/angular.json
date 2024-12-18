@@ -27,7 +27,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/staticwebapp.config.json"
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
@@ -94,8 +95,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
-            ],
+              "src/assets"            ],
             "styles": [
               "src/styles.scss"
             ],
