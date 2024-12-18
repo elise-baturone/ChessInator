@@ -46,6 +46,8 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_HAPPY_BEACH_03BCBAE03 }}
           app_location: "/front-app"
           output_location: "front-app/dist"
+          action: "upload" # Explicitly set the deployment action
+
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
